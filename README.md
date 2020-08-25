@@ -51,7 +51,8 @@ This project was developed witn **React**, **Sass**, **Node.js** and **Express**
 
 ---
 
-####WARNING:
+#### WARNING:
+
 Remember to name all the folders and and files with right structure
 
 - For folders, the name must go all in lowercase.
