@@ -16,12 +16,12 @@ const Filter = () => {
         <div className="search">
           <input type="text" className="searchTerm" placeholder="What are you looking for?" />
           <button type="submit" className="searchButton">
-            <i className="fa fa-search"></i>
+            <div class="search-solid icon"></div>
           </button>
         </div>
       </div>
 
-      <div className="">
+      <div>
         <select name="ranking" id="ranking" className="ranking-form">
           <option value="">Select your ranking</option>
           <option value="$500 - $1000">$500 - $1000</option>
