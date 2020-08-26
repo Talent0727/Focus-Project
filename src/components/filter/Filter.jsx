@@ -16,7 +16,7 @@ const Filter = () => {
         <div className="search">
           <input type="text" className="searchTerm" placeholder="What are you looking for?" />
           <button type="submit" className="searchButton">
-            <div class="search-solid icon"></div>
+            <div className="search-solid icon"></div>
           </button>
         </div>
       </div>

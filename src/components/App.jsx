@@ -28,10 +28,8 @@ class App extends React.Component {
               </Header>
             )}
           />
-          <Layout>
-            <Test />
-          </Layout>
         </Switch>
+        <Layout></Layout>
       </BrowserRouter>
     );
   }
