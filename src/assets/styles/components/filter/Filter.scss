@@ -1,0 +1,133 @@
+@import "../../util/Variables.scss";
+
+.container {
+  max-width: 1000px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.principal-text {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: $colorBasic1;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+  font-family: $mainFontFamily;
+}
+
+.filter .input-search-text {
+  display: flex;
+  justify-content: center;
+}
+
+.filter-rank > input {
+  width: 400px;
+  border-radius: 0 5px 5px 0;
+  height: 25px;
+}
+
+.input-search-text {
+  justify-items: center;
+  align-items: center;
+}
+
+.input-search-text {
+  float: left;
+  width: 12%;
+  background-color: $btn;
+  font-family: $basicFontFamily;
+  font-size: 12px;
+  height: 30px;
+  border-radius: 5px 0 0 5px;
+}
+
+.input-search {
+  display: inline-block;
+  margin: auto;
+  border-radius: 0 5px 5px 0;
+  height: 25px;
+}
+
+.search {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  font-family: $basicFontFamily;
+  font-size: 12px;
+  height: 30px;
+  width: 100%;
+  border: 1px solid white;
+  border-right: none;
+  padding: 5px;
+  border-radius: inherit;
+}
+
+.searchTerm:focus {
+  color: grey;
+}
+
+.searchButton {
+  width: 40px;
+  height: 30px;
+  border: 1px solid white;
+  background: white;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.wrap {
+  width: 55%;
+  float: left;
+}
+
+.ranking-form {
+  font-family: $basicFontFamily;
+  font-size: 12px;
+  height: 30px;
+  width: 30%;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.search-solid.icon {
+  color: $colorBasic2;
+  position: absolute;
+  margin-top: -8px;
+  margin-left: 3px;
+  width: 14px;
+  height: 14px;
+  border: solid 1px currentColor;
+  border-radius: 100%;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.search-solid.icon:before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 5px;
+  width: 1px;
+  height: 6px;
+  background-color: currentColor;
+}
+
+.search-solid.icon:after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  width: 10px;
+  height: 10px;
+  background-color: currentColor;
+  border-radius: 50%;
+}
