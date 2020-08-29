@@ -18,7 +18,6 @@ class App extends React.Component {
             render={(props) => (
               <Header {...props} bgImage={headerBackground}>
                 <Filter />
-                <Footer />
               </Header>
             )}
           />
