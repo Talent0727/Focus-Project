@@ -4,6 +4,7 @@ import headerBackground from "../assets/images/Banner.jpg";
 import Layout from "./Layout";
 import Header from "./header/Header";
 import Filter from "../components/filter/Filter";
+import JobCard from "./jobCard/JobCard";
 
 class App extends React.Component {
   render() {
@@ -20,7 +21,9 @@ class App extends React.Component {
             )}
           />
         </Switch>
-        <Layout></Layout>
+        <Layout>
+          <JobCard />
+        </Layout>
       </BrowserRouter>
     );
   }
