@@ -60,3 +60,15 @@
   margin: 10px;
   border-radius: 50px;
 }
+
+a.worksNames {
+  background-color: $btn;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 50px;
+  font-family: $basicFontFamily;
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
+}

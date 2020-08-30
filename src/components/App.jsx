@@ -9,8 +9,8 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={JobPage} />
-          {/*  <Route path="/job" component={JobPage} /> */}
+          <Route exact path="/" component={Home} />
+          <Route path="/job" component={JobPage} />
         </Switch>
       </BrowserRouter>
     );

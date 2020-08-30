@@ -5,6 +5,13 @@ import Layout from "../Layout";
 import Footer from "../footer/Footer";
 import headerBackground from "../../assets/images/BannerJob.jpeg";
 import companyLogo from "../../assets/images/oracleLogo.jpeg";
+import healthImg from "../../assets/images/insurance.png";
+import dentalImg from "../../assets/images/dentist.png";
+import telecommutingImg from "../../assets/images/work-from-home.png";
+import vacationImg from "../../assets/images/beach.png";
+import lunchImg from "../../assets/images/lunch.png";
+import parkingImg from "../../assets/images/car.png";
+import gymImg from "../../assets/images/exercise.png";
 import "../../assets/styles/components/jobPage/JobPage.scss";
 
 const JobPage = () => {
@@ -17,14 +24,18 @@ const JobPage = () => {
         </div>
       </Header>
       <Layout>
-        <article>
-          <h4>Description</h4>
-          <img src={companyLogo} alt="company logo" />
-
-          <p>
-            Greater New York Mutual Insurance Company (""GNY"") is an A+ rated, financially stable and growing property casualty insurance company
-            with locations throughout the Northeast. We are currently looking for a dynamic and highly motivated Data Engineer for our New York office
-          </p>
+        <article className="description__container">
+          <div>
+            <h4>Description</h4>
+            <p>
+              Greater New York Mutual Insurance Company (""GNY"") is an A+ rated, financially stable and growing property casualty insurance company
+              with locations throughout the Northeast. We are currently looking for a dynamic and highly motivated Data Engineer for our New York
+              office
+            </p>
+          </div>
+          <figure>
+            <img src={companyLogo} alt="company logo" />
+          </figure>
         </article>
         <article>
           <h4>Responsibilities</h4>
@@ -57,29 +68,67 @@ const JobPage = () => {
             unifying disparate ideas into a homogenized solution.
           </p>
         </article>
-        <article>
-          <div>
+        <article className="container__techologies-requirements">
+          <div className="container__techologies">
             <h4>Technologies and Tools:</h4>
             <p>
               Oracle 11g/12c, Toad for Oracle, Linux, Putty, GitHub, Rally, Nice to have: Informatica, Python, Aurora, and Hive in sprint planning,
               design, coding, unit testing, and sprint reviews. Our generous
             </p>
           </div>
-          <div>
+          <div className="container-requirements">
             <h4>Requirements</h4>
+            <div className="requirements__container">
+              <div>
+                <p>Java Script</p>
+                <p>Angular</p>
+                <p>GraphQl</p>
+                <p>Sass</p>
+                <p>MySQL</p>
+                <p>Shell</p>
+              </div>
+
+              <div>
+                <p>PostgreSQL</p>
+                <p>React/React Native</p>
+                <p>Front-End</p>
+                <p>Webpack</p>
+                <p>Spark SQL</p>
+                <p>Python</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article className="container__benefits">
+          <h4>Benefits package</h4>
+          <div className="benefits">
             <div>
-              <p>Java Script</p>
-              <p>Angular</p>
-              <p>GraphQl</p>
-              <p>Sass</p>
-              <p>MySQL</p>
-              <p>Shell</p>
-              <p>PostgreSQL</p>
-              <p>React/React Native</p>
-              <p>Front-End</p>
-              <p>Webpack</p>
-              <p>Spark SQL</p>
-              <p>Python</p>
+              <img src={healthImg} alt=" health image" />
+              <p>Health Insurance</p>
+            </div>
+            <div>
+              <img src={dentalImg} alt="dentis image" />
+              <p>Dental Insurance</p>
+            </div>
+            <div>
+              <img src={telecommutingImg} alt="telecommuting image" />
+              <p>Telecommuting</p>
+            </div>
+            <div>
+              <img src={vacationImg} alt="vaction image" />
+              <p>Flexible vacation and paid time off</p>
+            </div>
+            <div>
+              <img src={lunchImg} alt="lunch image" />
+              <p>Free lunch and snacks at all offices</p>
+            </div>
+            <div>
+              <img src={parkingImg} alt="parking image" />
+              <p>Free on-site parking</p>
+            </div>
+            <div>
+              <img src={gymImg} alt="gym image" />
+              <p>Onsite Gym Membership</p>
             </div>
           </div>
         </article>
