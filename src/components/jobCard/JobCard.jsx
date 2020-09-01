@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import focusLogo from "../../assets/images/logo-focus.svg";
 import ubicationLogo from "../../assets/images/ubicationLogo.svg";
 import moneyLogo from "../../assets/images/money.svg";
@@ -30,7 +31,9 @@ const jobCard = () => {
         <h4 className="worksNames">Data Analyst</h4>
       </div>
       <div className="works">
-        <h4 className="worksNames">Description</h4>
+        <Link to="/job" className="worksNames">
+          Description
+        </Link>
       </div>
     </article>
   );

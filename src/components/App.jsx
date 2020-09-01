@@ -1,30 +1,17 @@
 import React from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-import headerBackground from "../assets/images/Banner.jpg";
-import Layout from "./Layout";
-import Header from "./header/Header";
-import Footer from "./footer/Footer";
-import Filter from "../components/filter/Filter";
-import JobCard from "./jobCard/JobCard";
+import Home from "./home/Home";
+import JobPage from "./jobPage/JobPage";
+import jobCard from "./jobCard/JobCard";
 
 class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
         <Switch>
-          <Route
-            exact
-            path="/"
-            render={(props) => (
-              <Header {...props} bgImage={headerBackground}>
-                <Filter />
-              </Header>
-            )}
-          />
+          <Route exact path="/" component={Home} />
+          <Route path="/job" component={JobPage} />
         </Switch>
-        <Layout>
-          <JobCard />
-        </Layout>
       </BrowserRouter>
     );
   }

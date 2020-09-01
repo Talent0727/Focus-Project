@@ -1,0 +1,129 @@
+@import "../../util/Variables.scss";
+
+.header__job-position {
+  text-align: center;
+  bottom: 0;
+  color: white;
+  margin: 100px auto;
+  width: fit-content;
+
+  h1 {
+    font-family: $mainFontFamily;
+    font-size: 42px;
+    line-height: 49px;
+  }
+
+  button {
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: $basicFontFamily;
+    background-color: $btn;
+    border-style: none;
+    border: 1px solid #bdbdbd;
+    border-radius: 20px;
+    padding: 5px 30px;
+  }
+}
+
+article:first-of-type {
+  margin-top: 50px;
+}
+
+article:last-of-type {
+  margin-bottom: 100px;
+}
+
+article {
+  margin: 0 50px;
+  font-family: $basicFontFamily;
+
+  h4 {
+    font-family: $mainFontFamily;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+    color: #343434;
+  }
+
+  figure {
+    width: fit-content;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+}
+
+.description__container {
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    width: 90%;
+  }
+}
+
+.container__techologies-requirements {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container__techologies {
+  width: 40%;
+  padding-right: 20px;
+}
+
+.container-requirements {
+  width: 60%;
+  text-align: center;
+
+  p {
+    color: white;
+    background-color: $colorBasic1;
+    border-radius: 10px;
+    padding: 1px 5px;
+    font-size: 12px;
+  }
+}
+
+.requirements__container {
+  div {
+    margin-top: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.benefits {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+
+  div {
+    width: 150px;
+  }
+
+  p {
+    font-family: $basicFontFamily;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #334433;
+  }
+
+  img {
+    width: 60px;
+  }
+}

@@ -10,6 +10,11 @@
   font-family: $basicFontFamily;
   border: solid 1px $colorBasic2;
 }
+
+.card-Container:last-of-type {
+  margin-bottom: 150px;
+}
+
 .logo-Container {
   margin: 10px;
   box-shadow: 5px 5px 18px;
@@ -54,4 +59,16 @@
   padding: 5px;
   margin: 10px;
   border-radius: 50px;
+}
+
+a.worksNames {
+  background-color: $btn;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 50px;
+  font-family: $basicFontFamily;
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
 }
