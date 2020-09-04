@@ -5,6 +5,7 @@ import Filter from "../filter/Filter";
 import JobCard from "../jobCard/JobCard";
 import Footer from "../footer/Footer";
 import Layout from "../Layout";
+import Spinner from '../spinner/Spinner'
 
 const Home = () => {
   const [jobCards, setJobCards] = useState([]);
@@ -22,7 +23,7 @@ const Home = () => {
       </Header>
       <Layout>
         {
-          jobCards.length > 0 ? jobCards.map(job => (<JobCard key={job.Id} />)) : <h1>Nada</h1>
+          jobCards.length > 0 ? jobCards.map(job => (<JobCard key={job.Id} />)) : <Spinner />
         }
       </Layout>
       <Footer />
