@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../assets/styles/components/header/Header.scss";
 import focusLogo from "../../assets/images/logo-focus.svg";
 import githubLogo from "../../assets/images/github.svg";
@@ -15,49 +16,49 @@ const Header = (props) => {
       <i className="icon-menu burger-button" id="burger-menu"></i>
       <nav className="menu">
         <figure className="logo">
-          <a href="index.html">
+          <Link to="/">
             <img src={focusLogo} height="30" alt="Logo Focus" />
-          </a>
+          </Link>
         </figure>
         <ul className="menu-items">
           <li>
-            <a className="link" href="#nosotros">
+            <Link className="link" to="#nosotros">
               Nosotros
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="link" href="#vip">
+            <Link className="link" to="#vip">
               Focus VIP
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="link" href="#empresas">
+            <Link className="link" to="#empresas">
               Empresas
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="link" href="#contacto">
+            <Link className="link" to="#contacto">
               Contacto
-            </a>
+            </Link>
           </li>
         </ul>
         <ul>
           <li className="social-icon">
-            <a href="#">
+            <Link to="#">
               <img className="" src={githubLogo} width="20" alt="GitHub" />
-            </a>
+            </Link>
             <p className="social-text">Github</p>
           </li>
           <li className="social-icon">
-            <a href="#">
+            <Link to="#">
               <img className="" src={linkedinLogo} width="20" alt="Linkedin" />
-            </a>
+            </Link>
             <p className="social-text">Linkedin</p>
           </li>
           <li className="social-icon">
-            <a href="#">
+            <Link to="#">
               <img className="" src={facebookLogo} width="20" alt="Facebook" />
-            </a>
+            </Link>
             <p className="social-text">Facebook</p>
           </li>
         </ul>
