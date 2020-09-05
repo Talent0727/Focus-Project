@@ -23,7 +23,16 @@ const Home = () => {
       </Header>
       <Layout>
         {
-          jobCards.length > 0 ? jobCards.map(job => (<JobCard key={job.Id} />)) : <Spinner />
+          jobCards.length > 0 ? jobCards.map(job =>
+            (<JobCard key={job.Id}
+              logo={job.Images}
+              time={job.Time}
+              jobTitle={job.JobTitle}
+              location={job.Location}
+              salary={job.Revenue}
+              profile={job.Profile}
+            />
+            )) : <Spinner />
         }
       </Layout>
       <Footer />
