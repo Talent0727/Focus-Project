@@ -31,6 +31,7 @@ const Home = () => {
               location={job.Location}
               salary={job.Revenue}
               profile={job.Profile}
+              id={job.Id}
             />
             )) : <Spinner />
         }

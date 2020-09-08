@@ -7,7 +7,8 @@ import clockLogo from "../../assets/images/clock.svg";
 import "../../assets/styles/components/jobCard/JobCard.scss";
 
 const jobCard = (props) => {
-  const { logo, time, jobTitle, location, salary, profile } = props
+  const { logo, time, jobTitle, location, salary, profile, id } = props
+  //console.log(id);
   return (
     <article className="card-Container">
       <figure className="logo-Container">
@@ -32,7 +33,11 @@ const jobCard = (props) => {
         <h4 className="worksNames">{profile}</h4>
       </div>
       <div className="works">
-        <Link to="/job" className="worksNames">
+        <Link to={{
+          pathname:'/job',
+          search: `?id=${id}`
+        }}
+        className="worksNames">
           Description
         </Link>
       </div>

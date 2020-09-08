@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 import Header from "../header/Header";
 import Layout from "../Layout";
@@ -14,7 +14,22 @@ import parkingImg from "../../assets/images/car.png";
 import gymImg from "../../assets/images/exercise.png";
 import "../../assets/styles/components/jobPage/JobPage.scss";
 
-const JobPage = () => {
+const JobPage = (props) => {
+
+  const [pageInfo, setPageInfo] = useState([])
+
+  console.log(props.location.search.split('=', 2));
+
+  useEffect(() => {
+    fetch(`https://jobs-platzi-master.herokuapp.com/jobs/${props.location.search.split('=')[1]}`)
+    .then(response => response.json())
+    .then(data => setPageInfo(data.body))
+  }, [])
+
+  console.log(pageInfo);
+
+  pageInfo.length > 0 ? console.log(pageInfo[0].Images) : 'No hay logo'
+
   return (
     <React.Fragment>
       <Header bgImage={headerBackground}>
@@ -28,13 +43,15 @@ const JobPage = () => {
           <div>
             <h4>Description</h4>
             <p>
-              Greater New York Mutual Insurance Company (""GNY"") is an A+ rated, financially stable and growing property casualty insurance company
-              with locations throughout the Northeast. We are currently looking for a dynamic and highly motivated Data Engineer for our New York
-              office
+            {
+              pageInfo.length > 0 ? pageInfo[0].JobDescription : 'No hay info'
+            } 
             </p>
           </div>
           <figure>
-            <img src={companyLogo} alt="company logo" />
+            <img src={
+              pageInfo.length > 0 ? pageInfo[0].Images : 'No hay info'
+            } alt="company logo" />
           </figure>
         </article>
         <article>
