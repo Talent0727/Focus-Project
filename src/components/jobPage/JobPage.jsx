@@ -16,19 +16,13 @@ import "../../assets/styles/components/jobPage/JobPage.scss";
 
 const JobPage = (props) => {
 
-  const [pageInfo, setPageInfo] = useState([])
-
-  console.log(props.location.search.split('=', 2));
+  const [jobPageInfo, setJobPageInfo] = useState([])
 
   useEffect(() => {
     fetch(`https://jobs-platzi-master.herokuapp.com/jobs/${props.location.search.split('=')[1]}`)
     .then(response => response.json())
-    .then(data => setPageInfo(data.body))
+    .then(data => setJobPageInfo(data.body))
   }, [])
-
-  console.log(pageInfo);
-
-  pageInfo.length > 0 ? console.log(pageInfo[0].Images) : 'No hay logo'
 
   return (
     <React.Fragment>
@@ -44,13 +38,13 @@ const JobPage = (props) => {
             <h4>Description</h4>
             <p>
             {
-              pageInfo.length > 0 ? pageInfo[0].JobDescription : 'No hay info'
+              jobPageInfo.length > 0 ? jobPageInfo[0].JobDescription : 'There is no information to display'
             } 
             </p>
           </div>
           <figure>
             <img src={
-              pageInfo.length > 0 ? pageInfo[0].Images : 'No hay info'
+              jobPageInfo.length > 0 ? jobPageInfo[0].Images : 'There is no information to display'
             } alt="company logo" />
           </figure>
         </article>
@@ -75,14 +69,9 @@ const JobPage = (props) => {
         <article>
           <h4>Required Skills / knowledge</h4>
           <p>
-            5+ years of experience developing Big Data and/or machine learning solutions. Experience with a modern cloud platform, such as AWS,
-            Microsoft Azure, GCP, etc. Experience with SQL, NoSQL, BigData and Graph Technologies along with Programming languages like R, Python,
-            Kafka, Storm etc. Experience building microservices. Background in Agile SW development and scaled Agile Frameworks. A true believer in
-            measuring success based on working software and in quick prototyping. Someone who is a passionate coder and can spin up a snippet of code
-            quickly. Strategic thinker with the ability to build and execute innovative digital products, combined with tactical ability to execute
-            simultaneously against multiple contending priorities. Someone with an iterative approach, drive to move fast and think big. Demonstrated
-            ability to partner and communicate effectively with non-technical team members, resolving contending or contradictory objectives, and
-            unifying disparate ideas into a homogenized solution.
+          {
+              jobPageInfo.length > 0 ? jobPageInfo[0].Skills : 'There is no information to display'
+            } 
           </p>
         </article>
         <article className="container__techologies-requirements">
