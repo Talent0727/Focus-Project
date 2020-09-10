@@ -1,35 +1,48 @@
-import React, { useState, useEffect } from "react";
-import Header from "../header/Header";
-import headerBackground from "../../assets/images/Banner.jpg";
-import Filter from "../filter/Filter";
-import JobCard from "../jobCard/JobCard";
-import Footer from "../footer/Footer";
-import Layout from "../Layout";
-import Spinner from '../spinner/Spinner'
+import React, { useState, useEffect } from 'react';
+import Header from '../header/Header';
+import headerBackground from '../../assets/images/Banner.jpg';
+import Filter from '../filter/Filter';
+import JobCard from '../jobCard/JobCard';
+import Footer from '../footer/Footer';
+import Layout from '../Layout';
+import Spinner from '../spinner/Spinner';
 
 const Home = () => {
   const [jobCards, setJobCards] = useState([]);
-  const [query, setQuery] = useState('')
+  const [minSalary, setMinSalary] = useState(11);
+  const [maxSalary, setMaxSalary] = useState(99);
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
-    fetch("https://jobs-platzi-master.herokuapp.com/jobs")
+    fetch('https://jobs-platzi-master.herokuapp.com/jobs')
       .then((response) => response.json())
-      .then(data => setJobCards(data.body));
+      .then((data) => {
+        setJobCards(data.body);
+        console.log(data.body);
+      });
   }, []);
 
+  // Set salary values
+  const handleSalaryValuesFilter = (event) => {
+    const value = event.currentTarget.value.split('-');
+    setMinSalary(Number(value[0]));
+    setMaxSalary(Number(value[1]));
+  };
+
   // Data to be render by defult in the home
-  const homeInfo = jobCards.slice(0, 14)
+  const homeInfo = jobCards.slice(0, 14);
 
   // Data to be render by when filter is use
-  const dataFilter = jobCards.filter(job => {
-    if(query) {
-      return job.JobTitle.toLowerCase().includes(query.toLowerCase()) || job.Location.toLowerCase().includes(query.toLowerCase()) || job.Profile.toLowerCase().includes(query.toLowerCase())
+  const dataFilter = jobCards.filter((job) => {
+    if (query || minSalary !== 0 || maxSalary !== 0) {
+      return (job.JobTitle.toLowerCase().includes(query.toLowerCase()) || job.Location.toLowerCase().includes(query.toLowerCase()) || job.Profile.toLowerCase().includes(query.toLowerCase())) && (Number(job.MinSalaryEstimate) >= minSalary && Number(job.MaxSalaryEstimate) <= maxSalary);
     }
-  })
+  });
 
   const dataDefaultRender = () => {
-    return homeInfo.length > 0 ? homeInfo.map(job =>
-      (<JobCard key={job.Id}
+    return homeInfo.length > 0 ? homeInfo.map((job) => (
+      <JobCard
+        key={job.Id}
         logo={job.Images}
         time={job.Time}
         jobTitle={job.JobTitle}
@@ -38,12 +51,13 @@ const Home = () => {
         profile={job.Profile}
         id={job.Id}
       />
-      )) : <Spinner />
-  }
+    )) : <Spinner />;
+  };
 
   const dataFilterRender = () => {
-    return dataFilter.length > 0 ? dataFilter.map(job =>
-      (<JobCard key={job.Id}
+    return dataFilter.length > 0 ? dataFilter.map((job) => (
+      <JobCard
+        key={job.Id}
         logo={job.Images}
         time={job.Time}
         jobTitle={job.JobTitle}
@@ -52,41 +66,47 @@ const Home = () => {
         profile={job.Profile}
         id={job.Id}
       />
-      )) : <Spinner />
-  }
+    )) : <Spinner />;
+  };
 
-  return  (
-    <React.Fragment>
+  return (
+    <>
       <Header bgImage={headerBackground}>
-        <div className="container">
+        <div className='container'>
           <div>
-            <h2 className="principal-text">Encuentra tu empleo ideal</h2>
+            <h2 className='principal-text'>Encuentra tu empleo ideal</h2>
           </div>
-          <div className="filter">
-            <div className="input-search-text">
-              <p className="text-filter">Cualquier término</p>
+          <div className='filter'>
+            <div className='input-search-text'>
+              <p className='text-filter'>Cualquier término</p>
             </div>
           </div>
-          <div className="wrap">
-            <div className="search">
+          <div className='wrap'>
+            <div className='search'>
               <input
-                type="text"
-                className="searchTerm"
-                placeholder="What are you looking for?"
-                onChange={e => {setQuery(e.target.value)}}
+                type='text'
+                className='searchTerm'
+                placeholder='What are you looking for?'
+                onChange={(e) => { setQuery(e.target.value); }}
               />
-              <button type="submit" className="searchButton">
-                <div className="search-solid icon"></div>
+              <button type='submit' className='searchButton'>
+                <div className='search-solid icon' />
               </button>
             </div>
           </div>
 
           <div>
-            <select name="ranking" id="ranking" className="ranking-form">
-              <option value="">Select your ranking</option>
-              <option value="$500 - $1000">$500 - $1000</option>
-              <option value="$1000 - $2000">$1000 - $2000</option>
-              <option value="$2000 - $5000">$2000 - $5000</option>
+            <select name='ranking' id='ranking' className='ranking-form' onChange={handleSalaryValuesFilter}>
+              <option value=''>Select your ranking</option>
+              <option value='11-20'>$11K - $20K USD</option>
+              <option value='21-30'>$21K - $30K USD</option>
+              <option value='31-40'>$31K - $40K USD</option>
+              <option value='41-50'>$41K - $50K USD</option>
+              <option value='51-60'>$51K - $60K USD</option>
+              <option value='61-70'>$61K - $70K USD</option>
+              <option value='71-80'>$71K - $80K USD</option>
+              <option value='81-90'>$81K - $90K USD</option>
+              <option value='91-99'>$91K - $99K USD</option>
             </select>
           </div>
         </div>
@@ -97,7 +117,7 @@ const Home = () => {
         }
       </Layout>
       <Footer />
-    </React.Fragment>
+    </>
   );
 };
 
