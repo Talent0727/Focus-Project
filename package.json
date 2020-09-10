@@ -45,6 +45,7 @@
     "file-loader": "^6.0.0",
     "html-loader": "^1.2.1",
     "html-webpack-plugin": "^4.3.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^26.4.2",
     "jest-fetch-mock": "^3.0.3",
     "mini-css-extract-plugin": "^0.10.0",
@@ -61,7 +62,8 @@
       "<rootDir>/src/__test__/setupTest.js"
     ],
     "moduleNameMapper": {
-      "\\.(styl|css)$": "<rootDir>/src/__test__/__mocks__/styleMock.js"
+      "\\.(scss|css)$": "<rootDir>/src/__test__/__mocks__/styleMock.js",
+      ".+\\.(svg|png|jpg)$": "identity-obj-proxy"
     }
   }
 }
