@@ -63,7 +63,7 @@
     ],
     "moduleNameMapper": {
       "\\.(scss|css)$": "<rootDir>/src/__test__/__mocks__/styleMock.js",
-      ".+\\.(svg|png|jpg)$": "identity-obj-proxy"
+      ".+\\.(svg|png|jpg|jpeg)$": "identity-obj-proxy"
     }
   }
 }
