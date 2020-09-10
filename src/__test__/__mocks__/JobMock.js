@@ -1,0 +1,28 @@
+const JobMock = {
+  "_id": "5f58dca595b424022f53a1ad",
+  "Id": 1,
+  "JobTitle": "Quality DataAnalyst",
+  "SalaryEstimate": "$37K-$66K (Glassdoor est.)",
+  "MaxSalaryEstimate": "37",
+  "MinSalaryEstimate": "66",
+  "JobDescription": "Overview\n\nProvides analytical and technical support for the integration of multiple data sources used to prepare internal and external reporting for the Quality Management team and business stakeholders. Provides support and analytical insight for Quality Incentive measures, HEDIS measures, and Quality Improvement initiatives. Monitors, analyzes, and communicates Quality performance related to benchmarks. Collaborates with clinical and operational teams within Quality Management, as well as with CHOICE Clinical Operations and Business Intelligence & Analytics (BIA). Participates in data validation of current reporting and dashboards. Monitors data integrity of databases and provides recommendation accordingly. Participates in the development of internal dashboards and databases. Works under general direction.\n\nResponsibilities\nProvides support and analytical insight for Quality Incentive measures, HEDIS measures, and Quality Improvement initiatives.\nMonitors internal performance against benchmarks through analysis.\nParticipates in the identification, development, management, and monitoring of quality improvement initiatives.\nCollaborates with Education staff and makes recommendations for areas of focus in training of assessors and care managers, based on analysis of performance trends.\nResearches and identifies technical/operational problems surrounding systems/applications; communicates/refers complex and unresolved problems to management, Business Intelligence & Analytics (BIA), and/or IT.\nConducts ad hoc analyses to help identify operational gaps in care; drafts presentations, reports, publications, etc. regarding results of analyses.\nCommunicates results of data analysis to non-technical audiences.\nParticipates in prioritization of departmental goals based on identification of operational gaps in care.\nParticipates in establishing data quality specifications and designs. Coordinates and supports integrated data systems for analyzing and validating information.\nIdentifies and makes recommendations for reporting re-designs and platforms for reporting (e.g. automating a manual Excel file using macros, developing a MicroStrategy dashboard to replace manually updated Excel dashboards, moving data storage from Excel to Access, etc.), as needed. Trains staff on use of new/updated systems and related topics.\nAssists Quality management team with database and department reports. Conducts operations review and analysis of processes and procedures, issues report of findings and implements approved changes as required.\nIdentifies and recommends software needs and applications to accomplish required reporting.\nRetrieves, compiles, reviews and ensures accuracy of data from databases; researches and corrects discrepancies, as needed. Analyzes data from internal and external sources. Identifies and resolves data quality issues before reports are generated. Works with staff to correct data entry errors.\nAnalyzes data, identifies trends, reoccurring problems, statistically significant findings and prepares reports/summaries for management review.\nActs as a liaison between Quality Management, CHOICE Clinical Operations, and BIA.\nReviews and identifies trends and variances in data and reports. Researches findings and determines appropriateness of elevating identified issues to leadership for further review/evaluation/action.\nMonitors and maintains files by ensuring that files are current and of relevant nature.\nAnalyzes and corrects error reports to ensure timely and accurate data; develops corrective actions to prevent errors where possible.\nParticipates in special projects and performs other duties, as needed.\nQualifications\nEducation: Bachelors degree in bio/statistics, epidemiology, mathematics, computer science, social sciences, a related field or the equivalent work experience required. Masters degree with concentration in computer science, data science, or statistics preferred.\n\n\nExperience: Minimum of two years experience performing increasingly complex data analysis and interpretation, preferably in a managed care or health care setting, required. Experience with data extraction and manipulation required. Experience with relational databases and programming experience in SQL or PL/SQL required. Experience with claims data and health plan quality metrics (e.g., HEDIS, QARR) preferred. Proficiency conducting statistical analysis with R, SAS, Stata or other statistical software preferred. Advanced personal computer skills, including Microsoft Word, PowerPoint, Excel, and Access required. Effective oral, written communication and interpersonal skills required. Ability to multi task in a fast-paced environment required.\n\nCA2020",
+  "Rating": 3.8,
+  "CompanyName": "Visiting Nurse Service of New York\n3.8",
+  "Location": "New York, NY",
+  "Headquarters": "New York, NY",
+  "Size": "10000+ employees",
+  "Founded": 1893,
+  "TypeOfOwnership": "Nonprofit Organization",
+  "Industry": "Health Care Services & Hospitals",
+  "Sector": "Health Care",
+  "Revenue": "$2 to $5 billion (USD)",
+  "Competitors": null,
+  "EasyApply": null,
+  "Profile": "No Particulary Profile Specified",
+  "Skills": "Excel, Macros, Database",
+  "Images": "https://picsum.photos/id/2/200.webp",
+  "Time": "3 motnhs ago",
+  "Benefits": "undefined"
+}
+
+export default JobMock
