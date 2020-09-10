@@ -1,6 +1,7 @@
 @import "../../util/Variables.scss";
 
 .card-Container {
+  box-sizing: border-box;
   width: 90%;
   height: 200px;
   margin: 50px;
@@ -16,9 +17,10 @@
 }
 
 .logo-Container {
-  margin: 10px;
-  box-shadow: 5px 5px 18px;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 18px rgba(0,0,0,0.6);
   border-radius: 10px;
+  overflow: hidden;
 }
 .img-Container {
   width: 100%;
@@ -41,7 +43,9 @@
 .Logos {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-evenly;
+  padding: 3px;
   margin: 0;
 }
 .Logitos {
