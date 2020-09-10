@@ -34,6 +34,8 @@ const Home = () => {
 
   // Data to be render by when filter is use
   const dataFilter = jobCards.filter((job) => {
+    if(!query) return
+    
     if (query || minSalary !== 0 || maxSalary !== 0) {
       return (job.JobTitle.toLowerCase().includes(query.toLowerCase()) || job.Location.toLowerCase().includes(query.toLowerCase()) || job.Profile.toLowerCase().includes(query.toLowerCase())) && (Number(job.MinSalaryEstimate) >= minSalary && Number(job.MaxSalaryEstimate) <= maxSalary);
     }
