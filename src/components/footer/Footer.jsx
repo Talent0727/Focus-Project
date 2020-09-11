@@ -1,5 +1,9 @@
 import React from 'react';
 import '../../assets/styles/components/footer/Footer.scss';
+import Logo from '../../assets/images/logo-focus-footer.svg'
+import GithubLogo from '../../assets/images/github.svg'
+import LinkedinLogo from '../../assets/images/linkedin.svg'
+import FacebookLogo from '../../assets/images/facebook.svg'
 
 const Footer = () => (
   <footer className="footer">
@@ -7,7 +11,7 @@ const Footer = () => (
       <figure>
         <a href="index.html">
           <img
-            src="images/logo-focus-footer.svg"
+            src={Logo}
             height="30"
             alt="Logo Focus"
           />
@@ -37,7 +41,7 @@ const Footer = () => (
       <div className="social">
         <li className="social__icon">
           <a href='#'>
-            <img className="" src="images/github.svg" width="20" alt="GitHub"
+            <img className="" src={GithubLogo} width="20" alt="GitHub"
             />
           </a>
           <p className="social__text-footer">Github</p>
@@ -46,7 +50,7 @@ const Footer = () => (
           <a href="#">
             <img
               className=""
-              src="images/linkedin.svg"
+              src={LinkedinLogo}
               width="20"
               alt="Linkedin"
             />
@@ -57,7 +61,7 @@ const Footer = () => (
           <a href="#">
             <img
               className=""
-              src="images/facebook.svg"
+              src={FacebookLogo}
               width="20"
               alt="Facebook"
             />
