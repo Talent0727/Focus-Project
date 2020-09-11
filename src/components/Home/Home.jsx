@@ -8,11 +8,20 @@ import Layout from '../Layout';
 import Spinner from '../spinner/Spinner';
 
 const Home = () => {
+  const [jobCardsDefault, setJobCardsDefault] = useState([]);
   const [jobCards, setJobCards] = useState([]);
   const [minSalary, setMinSalary] = useState(11);
   const [maxSalary, setMaxSalary] = useState(99);
   const [dataFilter, setDataFiler] = useState([])
   const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    fetch('https://jobs-platzi-master.herokuapp.com/jobs/some/15')
+      .then((response) => response.json())
+      .then((data) => {
+        setJobCardsDefault(data.body);
+      });
+  }, []);
 
   useEffect(() => {
     fetch('https://jobs-platzi-master.herokuapp.com/jobs')
@@ -34,10 +43,7 @@ const Home = () => {
     }
   };
 
-  // Data to be render by defult in the home
-  const homeInfo = jobCards.slice(0, 14);
-
-  // Data to be render by when filter is use
+  // Data to be render when filter is use
   React.useMemo(() => {
     const result = jobCards.filter(job => {
       if(!query) return
@@ -52,7 +58,7 @@ const Home = () => {
   }, [jobCards, query, minSalary, maxSalary])
 
   const dataDefaultRender = () => {
-    return homeInfo.length > 0 ? homeInfo.map((job) => (
+    return jobCardsDefault.length > 0 ? jobCardsDefault.map((job) => (
       <JobCard
         key={job.Id}
         logo={job.Images}
