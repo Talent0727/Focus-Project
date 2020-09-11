@@ -92,11 +92,11 @@ const Home = () => {
       <Header bgImage={headerBackground}>
         <div className='container'>
           <div>
-            <h2 className='principal-text'>Encuentra tu empleo ideal</h2>
+            <h2 className='principal-text'>Find your ideal job</h2>
           </div>
           <div className='filter'>
             <div className='input-search-text'>
-              <p className='text-filter'>Cualquier término</p>
+              <p className='text-filter'>What are you looking for?</p>
             </div>
           </div>
           <div className='wrap'>
@@ -104,7 +104,7 @@ const Home = () => {
               <input
                 type='text'
                 className='searchTerm'
-                placeholder='What are you looking for?'
+                placeholder='Search by location, job title, position or profile...'
                 onChange={(e) => { setQuery(e.target.value); }}
               />
               <button type='submit' className='searchButton'>
