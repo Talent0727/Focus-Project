@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../header/Header';
 import headerBackground from '../../assets/images/Banner.jpg';
-import Filter from '../filter/Filter';
 import JobCard from '../jobCard/JobCard';
 import Footer from '../footer/Footer';
 import Layout from '../Layout';
 import Spinner from '../spinner/Spinner';
+import '../../assets/styles/components/filter/Filter.scss'
 
 const Home = () => {
   const [jobCardsDefault, setJobCardsDefault] = useState([]);

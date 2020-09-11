@@ -4,7 +4,6 @@ import Header from "../header/Header";
 import Layout from "../Layout";
 import Footer from "../footer/Footer";
 import headerBackground from "../../assets/images/BannerJob.jpeg";
-import companyLogo from "../../assets/images/oracleLogo.jpeg";
 import healthImg from "../../assets/images/insurance.png";
 import dentalImg from "../../assets/images/dentist.png";
 import telecommutingImg from "../../assets/images/work-from-home.png";
