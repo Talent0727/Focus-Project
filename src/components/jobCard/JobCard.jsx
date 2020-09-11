@@ -34,7 +34,7 @@ const jobCard = (props) => {
         <Link
           to={{
             pathname: '/job',
-            search: `?id=${id}`,
+            search: `id=${id}`,
           }}
           className='worksNames works__description'
         >
