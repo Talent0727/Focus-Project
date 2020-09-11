@@ -11,7 +11,7 @@
   color: #fff;
   text-decoration: none;
   font-family: $basicFontFamily;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -33,6 +33,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  margin-right: 40px;
 }
 
 .menu {
@@ -40,12 +41,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-right: 20px;
 }
 
 .menu-items {
-  width: 500px;
+  width: 700px;
   display: flex;
-  height: 40px;
+  height: 42px;
   justify-content: space-evenly;
   align-items: center;
   background-color: rgba(256, 256, 256, 0.2);
@@ -53,18 +55,21 @@
 }
 
 .figure {
-  margin: 0;
+  margin: auto;
 }
 
 .social-icon {
   line-height: 0;
   margin-right: 20px;
+  color: white;
+  font-size: 13px;
 }
 
 .social-text {
   font-family: $basicFontFamily;
   font-size: 12px;
   margin-left: auto;
+  margin-top: 13px;
 }
 
 .social-menu-icon {
