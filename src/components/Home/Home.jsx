@@ -1,17 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../header/Header';
 import headerBackground from '../../assets/images/Banner.jpg';
-import Filter from '../filter/Filter';
 import JobCard from '../jobCard/JobCard';
 import Footer from '../footer/Footer';
 import Layout from '../Layout';
 import Spinner from '../spinner/Spinner';
+import '../../assets/styles/components/filter/Filter.scss'
 
 const Home = () => {
+  const [jobCardsDefault, setJobCardsDefault] = useState([]);
   const [jobCards, setJobCards] = useState([]);
   const [minSalary, setMinSalary] = useState(11);
   const [maxSalary, setMaxSalary] = useState(99);
+  const [dataFilter, setDataFiler] = useState([])
   const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    fetch('https://jobs-platzi-master.herokuapp.com/jobs/some/15')
+      .then((response) => response.json())
+      .then((data) => {
+        setJobCardsDefault(data.body);
+      });
+  }, []);
 
   useEffect(() => {
     fetch('https://jobs-platzi-master.herokuapp.com/jobs')
@@ -33,20 +43,22 @@ const Home = () => {
     }
   };
 
-  // Data to be render by defult in the home
-  const homeInfo = jobCards.slice(0, 14);
-
-  // Data to be render by when filter is use
-  const dataFilter = jobCards.filter((job) => {
-    if(!query) return
+  // Data to be render when filter is use
+  React.useMemo(() => {
+    const result = jobCards.filter(job => {
+      if(!query) return
     
-    if (query || minSalary !== 0 || maxSalary !== 0) {
-      return (job.JobTitle.toLowerCase().includes(query.toLowerCase()) || job.Location.toLowerCase().includes(query.toLowerCase()) || job.Profile.toLowerCase().includes(query.toLowerCase())) && (Number(job.MinSalaryEstimate) >= minSalary && Number(job.MaxSalaryEstimate) <= maxSalary);
-    }
-  });
+      if (query || minSalary !== 0 || maxSalary !== 0) {
+        return (job.JobTitle.toLowerCase().includes(query.toLowerCase()) || job.Location.toLowerCase().includes(query.toLowerCase()) || job.Profile.toLowerCase().includes(query.toLowerCase())) && (Number(job.MinSalaryEstimate) >= minSalary && Number(job.MaxSalaryEstimate) <= maxSalary);
+      }
+    })
+
+    setDataFiler(result)
+
+  }, [jobCards, query, minSalary, maxSalary])
 
   const dataDefaultRender = () => {
-    return homeInfo.length > 0 ? homeInfo.map((job) => (
+    return jobCardsDefault.length > 0 ? jobCardsDefault.map((job) => (
       <JobCard
         key={job.Id}
         logo={job.Images}

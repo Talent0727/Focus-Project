@@ -26,6 +26,20 @@
   }
 }
 
+.logo__company {
+  max-width: 225px;
+  margin-top: 70px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px;
+  padding: 5px;
+
+  img {
+    width: 100%;
+    border-radius: 5px;
+  }
+}
+
 article:first-of-type {
   margin-top: 50px;
 }
@@ -56,10 +70,16 @@ article {
   figure {
     width: fit-content;
     background: #ffffff;
-    border: 1px solid #eeeeee;
+    /*  border: 1px solid #eeeeee; */
     box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
     border-radius: 10px;
+  }
+}
+
+.jobInfo__container {
+  p {
+    width: 90%;
   }
 }
 
@@ -75,6 +95,7 @@ article {
 .container__techologies-requirements {
   display: flex;
   justify-content: space-between;
+  justify-content: center;
 }
 
 .container__techologies {
@@ -83,7 +104,7 @@ article {
 }
 
 .container-requirements {
-  width: 60%;
+  /* width: 60%; */
   text-align: center;
 
   p {
@@ -125,5 +146,9 @@ article {
 
   img {
     width: 60px;
+    /* border-radius: 10px;
+    box-shadow: 5px 5px 18px; */
   }
 }
+
+
