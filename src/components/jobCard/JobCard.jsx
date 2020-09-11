@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import focusLogo from '../../assets/images/logo-focus.svg';
 import ubicationLogo from '../../assets/images/ubicationLogo.svg';
 import moneyLogo from '../../assets/images/money.svg';
 import clockLogo from '../../assets/images/clock.svg';
@@ -8,7 +7,6 @@ import '../../assets/styles/components/jobCard/JobCard.scss';
 
 const jobCard = (props) => {
   const { logo, time, jobTitle, location, salary, profile, id } = props;
-  //console.log(id);
   return (
     <article className='card-Container'>
       <figure className='logo-Container'>
@@ -30,7 +28,7 @@ const jobCard = (props) => {
         </figure>
       </div>
       <div className='works'>
-        <h4 className='worksNames'>{profile}</h4>
+        <h4 className='worksNames works__profile'>{profile}</h4>
       </div>
       <div className='works'>
         <Link
@@ -38,7 +36,7 @@ const jobCard = (props) => {
             pathname: '/job',
             search: `?id=${id}`,
           }}
-          className='worksNames'
+          className='worksNames works__description'
         >
           Description
         </Link>

@@ -18,15 +18,19 @@ const Home = () => {
       .then((response) => response.json())
       .then((data) => {
         setJobCards(data.body);
-        console.log(data.body);
       });
   }, []);
 
   // Set salary values
   const handleSalaryValuesFilter = (event) => {
-    const value = event.currentTarget.value.split('-');
-    setMinSalary(Number(value[0]));
-    setMaxSalary(Number(value[1]));
+    if(event.currentTarget.value === '') {
+      setMinSalary(11);
+      setMaxSalary(99)
+    } else {
+      const value = event.currentTarget.value.split('-');
+      setMinSalary(Number(value[0]));
+      setMaxSalary(Number(value[1]));
+    }
   };
 
   // Data to be render by defult in the home
