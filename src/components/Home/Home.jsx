@@ -11,6 +11,7 @@ const Home = () => {
   const [jobCards, setJobCards] = useState([]);
   const [minSalary, setMinSalary] = useState(11);
   const [maxSalary, setMaxSalary] = useState(99);
+  const [dataFilter, setDataFiler] = useState([])
   const [query, setQuery] = useState('');
 
   useEffect(() => {
@@ -37,13 +38,18 @@ const Home = () => {
   const homeInfo = jobCards.slice(0, 14);
 
   // Data to be render by when filter is use
-  const dataFilter = jobCards.filter((job) => {
-    if(!query) return
+  React.useMemo(() => {
+    const result = jobCards.filter(job => {
+      if(!query) return
     
-    if (query || minSalary !== 0 || maxSalary !== 0) {
-      return (job.JobTitle.toLowerCase().includes(query.toLowerCase()) || job.Location.toLowerCase().includes(query.toLowerCase()) || job.Profile.toLowerCase().includes(query.toLowerCase())) && (Number(job.MinSalaryEstimate) >= minSalary && Number(job.MaxSalaryEstimate) <= maxSalary);
-    }
-  });
+      if (query || minSalary !== 0 || maxSalary !== 0) {
+        return (job.JobTitle.toLowerCase().includes(query.toLowerCase()) || job.Location.toLowerCase().includes(query.toLowerCase()) || job.Profile.toLowerCase().includes(query.toLowerCase())) && (Number(job.MinSalaryEstimate) >= minSalary && Number(job.MaxSalaryEstimate) <= maxSalary);
+      }
+    })
+
+    setDataFiler(result)
+
+  }, [jobCards, query, minSalary, maxSalary])
 
   const dataDefaultRender = () => {
     return homeInfo.length > 0 ? homeInfo.map((job) => (
