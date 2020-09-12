@@ -1,5 +1,16 @@
 @import "../../util/Variables.scss";
 
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+  line-height: calculateRem($size) 1.5;
+}
+
 .header__job-position {
   text-align: center;
   bottom: 0;
@@ -11,6 +22,7 @@
     font-family: $mainFontFamily;
     font-size: 42px;
     line-height: 49px;
+    @include font-size(42px);
   }
 
   button {
@@ -30,13 +42,10 @@
   max-width: 225px;
   margin-top: 70px;
   text-align: center;
-  border-radius: 10px;
-  box-shadow: 3px 3px 10px;
   padding: 5px;
-
-  img {
+  @include caja img {
     width: 100%;
-    border-radius: 5px;
+    /* border-radius: 5px; */
   }
 }
 
@@ -65,6 +74,7 @@ article {
     line-height: 22px;
     margin: 0;
     color: #343434;
+    @include font-size(16px);
   }
 
   figure {
@@ -142,6 +152,7 @@ article {
     line-height: 22px;
     text-align: center;
     color: #334433;
+    @include font-size(16px);
   }
 
   img {
@@ -150,5 +161,3 @@ article {
     box-shadow: 5px 5px 18px; */
   }
 }
-
-

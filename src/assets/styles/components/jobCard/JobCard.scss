@@ -1,5 +1,16 @@
 @import "../../util/Variables.scss";
 
+@function calculateRem($size) {
+  $remSize: $size / 18px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+  line-height: calculateRem($size) 1.5;
+}
+
 .card-Container {
   width: 90%;
   height: auto;
@@ -10,6 +21,7 @@
   grid-template-columns: 20% 50% 15% 15%;
   font-family: $basicFontFamily;
   border: solid 1px $colorBasic2;
+  @include font-size(16px);
 }
 
 .card-Container:last-of-type {
@@ -19,9 +31,8 @@
 .logo-Container {
   margin: 10px;
   height: 200px;
-  box-shadow: 5px 5px 18px;
-  border-radius: 10px;
   overflow: hidden;
+  @include caja;
 }
 .img-Container {
   width: 100%;
@@ -89,6 +100,7 @@
   text-decoration: none;
   font-weight: 700;
   text-align: center;
+  @include font-size(18px);
 }
 
 .general-data {

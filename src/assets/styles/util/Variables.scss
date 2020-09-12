@@ -11,5 +11,18 @@ $basicFontFamily: "Open Sans", sans-serif;
 $btn: #fba100;
 $colorBasic1: #6bbaa7;
 $colorBasic2: #6c648b;
+$colorFonts: white;
 
 /*-----------*/
+
+@mixin menu {
+  color: $colorFonts;
+}
+@mixin caja {
+  box-shadow: 5px 5px 18px;
+  border-radius: 10px;
+}
+
+@mixin worksNames1 {
+  border-radius: 50px;
+}

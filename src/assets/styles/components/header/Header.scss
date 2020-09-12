@@ -1,4 +1,15 @@
 @import "../../util/Variables.scss";
+@import "../../util/breakpoints.scss";
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+  line-height: calculateRem($size) 1.5;
+}
 
 .header {
   width: 100%;
@@ -13,45 +24,61 @@
   font-family: $basicFontFamily;
   font-size: 16px;
   font-weight: 500;
+  @include font-size(16px);
 }
 
 .header a {
-  display: flex;
+  display: none;
   align-items: center;
   padding: 0 10px;
+  @include media(desktop-s) {
+    display: flex;
+  }
 }
 
 .nav-header {
   width: 100%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
+  @include media(desktop-s) {
+    display: flex;
+  }
 }
 
 .menu ul {
-  display: flex;
+  display: none;
   margin: 0;
   padding: 0;
   list-style: none;
   margin-right: 40px;
+  @include media(desktop-s) {
+    display: flex;
+  }
 }
 
 .menu {
   width: 100%;
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   margin-right: 20px;
+  @include media(desktop-s) {
+    display: flex;
+  }
 }
 
 .menu-items {
   width: 700px;
-  display: flex;
+  display: none;
   height: 42px;
   justify-content: space-evenly;
   align-items: center;
   background-color: rgba(256, 256, 256, 0.2);
   border-radius: 5px;
+  @include media(desktop-s) {
+    display: flex;
+  }
 }
 
 .figure {
