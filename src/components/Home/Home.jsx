@@ -94,39 +94,42 @@ const Home = () => {
           <div>
             <h2 className='principal-text'>Find your ideal job</h2>
           </div>
-          <div className='filter'>
-            <div className='input-search-text'>
-              <p className='text-filter'>What are you looking for?</p>
+          <div className='container__filter'>
+            <div className='filter'>
+              <div className='input-search-text'>
+                <p className='text-filter'>What are you looking for?</p>
+              </div>
             </div>
-          </div>
-          <div className='wrap'>
-            <div className='search'>
-              <input
-                type='text'
-                className='searchTerm'
-                placeholder='Search by location, job title, position or profile...'
-                onChange={(e) => { setQuery(e.target.value); }}
-              />
-              <button type='submit' className='searchButton'>
-                <div className='search-solid icon' />
-              </button>
+            <div className='wrap'>
+              <div className='search'>
+                <input
+                  type='text'
+                  className='searchTerm'
+                  placeholder='Search by location, job title, position or profile...'
+                  onChange={(e) => { setQuery(e.target.value); }}
+                />
+                <button type='submit' className='searchButton'>
+                  <div className='search-solid icon' />
+                </button>
+              </div>
             </div>
-          </div>
 
-          <div>
-            <select name='ranking' id='ranking' className='ranking-form' onChange={handleSalaryValuesFilter}>
-              <option value=''>Select your ranking</option>
-              <option value='11-20'>$11K - $20K USD</option>
-              <option value='21-30'>$21K - $30K USD</option>
-              <option value='31-40'>$31K - $40K USD</option>
-              <option value='41-50'>$41K - $50K USD</option>
-              <option value='51-60'>$51K - $60K USD</option>
-              <option value='61-70'>$61K - $70K USD</option>
-              <option value='71-80'>$71K - $80K USD</option>
-              <option value='81-90'>$81K - $90K USD</option>
-              <option value='91-99'>$91K - $99K USD</option>
-            </select>
+            <div className='container__ranking-form'>
+              <select name='ranking' id='ranking' className='ranking-form' onChange={handleSalaryValuesFilter}>
+                <option value=''>Select your ranking</option>
+                <option value='11-20'>$11K - $20K USD</option>
+                <option value='21-30'>$21K - $30K USD</option>
+                <option value='31-40'>$31K - $40K USD</option>
+                <option value='41-50'>$41K - $50K USD</option>
+                <option value='51-60'>$51K - $60K USD</option>
+                <option value='61-70'>$61K - $70K USD</option>
+                <option value='71-80'>$71K - $80K USD</option>
+                <option value='81-90'>$81K - $90K USD</option>
+                <option value='91-99'>$91K - $99K USD</option>
+              </select>
+            </div>
           </div>
+          
         </div>
       </Header>
       <Layout>

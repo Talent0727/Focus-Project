@@ -1,9 +1,30 @@
 @import "../../util/Variables.scss";
+@import "../../util/breakpoints.scss";
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+  line-height: calculateRem($size) 1.5;
+
+}
 
 .container {
-  max-width: 1100px;
+  /* max-width: 1100px; */
   text-align: center;
   margin: 0 auto;
+
+  @include media(desktop-s2) {
+    height: 100%;
+    padding: 10% 0;
+  }
+
+  @include media(mobile-only) {
+    width: 100vh;
+  }
 }
 
 .principal-text {
@@ -15,18 +36,35 @@
   line-height: 1.5;
   letter-spacing: -0.2px;
   font-family: $mainFontFamily;
+
+  @include media(desktop-s2) {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
 }
 
-.filter .input-search-text {
+.container__filter {
+  margin: 0 auto;
+  max-width: 90%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-.filter-rank > input {
+.text-filter {
+  margin: 0;
+}
+
+/* .filter .input-search-text {
+  display: flex;
+  justify-content: center;
+} */
+
+/* .filter-rank > input {
   width: 400px;
   border-radius: 0 5px 5px 0;
   height: 25px;
-}
+} */
 
 .input-search-text {
   width: fit-content;
@@ -36,7 +74,6 @@
 }
 
 .input-search-text {
-  float: left;
   width: fit-content;
   background-color: $btn;
   font-family: $basicFontFamily;
@@ -44,6 +81,10 @@
   height: 30px;
   border-radius: 5px 0 0 5px;
   padding: 10px 5px;
+
+  @include media(mobile-only) {
+    border-radius: 5px;
+  }
 }
 
 .input-search {
@@ -58,6 +99,20 @@
   height: 30px;
   position: relative;
   display: flex;
+
+  
+
+  input::placeholder{
+    @include font-size(10px);
+  }
+
+  @include media(mobile-only) {
+    margin-top: 5px;
+    border-radius: 5px 0 0px 5px;
+    input {
+      width: 100%;
+    }
+  }
 }
 
 .searchTerm {
@@ -88,17 +143,34 @@
 }
 
 .wrap {
-  width: 55%;
-  float: left;
+  width: 40%;
+ margin-right: 10px;
+
+ @include media(mobile-only) {
+  width: 100%;
+  margin-right: 0;
+}
+}
+
+.container__ranking-form {
+  @include media(mobile-only) {
+    margin-top: 10px;
+    width: 100%;
+  }
 }
 
 .ranking-form {
   font-family: $basicFontFamily;
   font-size: 12px;
   height: 30px;
-  width: 30%;
+  width: 150PX;
   height: 30px;
   border-radius: 5px;
+
+  @include media(mobile-only) {
+    width: 100%;
+   
+  }
 }
 
 .search-solid.icon {

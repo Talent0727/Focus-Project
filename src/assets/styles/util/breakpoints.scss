@@ -12,6 +12,10 @@ lo unico que le tengo que decir es que necesito una mediaquerie para tablet, par
     @media only screen and (min-width: 992px) {
       @content;
     }
+  } @else if $breakpoint == desktop-s2 {
+    @media only screen and (max-width: 991px) {
+      @content;
+    }
   } @else if $breakpoint == desktop-m {
     @media only screen and (min-width: 1200px) {
       @content;
@@ -25,7 +29,7 @@ lo unico que le tengo que decir es que necesito una mediaquerie para tablet, par
       @content;
     }
   } @else if $breakpoint == mobile-only {
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 425px) {
       @content;
     }
   } @else if $breakpoint == tablet-p-only {
@@ -42,6 +46,14 @@ lo unico que le tengo que decir es que necesito una mediaquerie para tablet, par
     }
   } @else if $breakpoint == desktop-m-only {
     @media only screen and (min-width: 1200px) and (max-width: 1480px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-m-2 {
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-m-3 {
+    @media only screen and (min-width: 320px) and (max-width: 425px) {
       @content;
     }
   }
